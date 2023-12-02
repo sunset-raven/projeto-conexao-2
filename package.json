@@ -1,0 +1,17 @@
+{
+  "name": "projeto-conexao-2",
+  "version": "1.0.0",
+  "description": "Projeto final do Imersão JavaScript - Revisitando ideias do Projeto Conexão.",
+  "main": "Pessoa.js",
+  "scripts": {
+    "test": "jest",
+    "test:jest": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3"
+  }
+}
