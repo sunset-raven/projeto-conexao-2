@@ -20,7 +20,7 @@ class Pessoa {
     this.#telefone = telefone;
   }
 
-  testandoNumeroDeTelefone(telefone) {
+  testarNumeroDeTelefone(telefone) {
     let numeroTelefone = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
     if (!numeroTelefone.test(telefone)) {
       throw new Error("Telefone não reconhecido!");
@@ -38,7 +38,7 @@ class Pessoa {
     if (typeof nome !== "string") {
       throw new Error("O nome deve ter apenas letras!");
     }
-    this.testandoNumeroDeTelefone(telefone);
+    this.testarNumeroDeTelefone(telefone);
     this.nome = nome;
     this.#dataDeNascimento = dataDeNascimento;
     this.#telefone = telefone;
