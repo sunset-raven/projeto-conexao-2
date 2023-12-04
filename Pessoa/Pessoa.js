@@ -1,12 +1,8 @@
-// import { Profissional } from "./Profissional.js";
-// import { Paciente } from "./Paciente.js";
-
-const Profissional = require("./Profissional");
-const Paciente = require("./Paciente");
-
 class Pessoa {
   #dataDeNascimento;
   #telefone;
+  static listaDePacientes = [];
+  static listaDeProfissionais = [];
 
   get getDataDeNascimento() {
     return this.#dataDeNascimento;
@@ -24,7 +20,7 @@ class Pessoa {
     this.#telefone = telefone;
   }
 
-  numeroDeTelefone(telefone) {
+  testandoNumeroDeTelefone(telefone) {
     let numeroTelefone = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
     if (!numeroTelefone.test(telefone)) {
       throw new Error("Telefone não reconhecido!");
@@ -42,7 +38,7 @@ class Pessoa {
     if (typeof nome !== "string") {
       throw new Error("O nome deve ter apenas letras!");
     }
-    this.numeroDeTelefone(telefone);
+    this.testandoNumeroDeTelefone(telefone);
     this.nome = nome;
     this.#dataDeNascimento = dataDeNascimento;
     this.#telefone = telefone;
@@ -55,7 +51,7 @@ class Pessoa {
     if (tipoDePessoa.toLowerCase() === "profissional") {
       switch (tipoDeBusca) {
         case "nome":
-          const buscaNome = Profissional.listaDeProfissionais.find(
+          const buscaNome = Pessoa.listaDeProfissionais.find(
             (profissional) =>
               profissional.nome.toLowerCase() === selecaoParaBusca.toLowerCase()
           );
@@ -64,7 +60,7 @@ class Pessoa {
           }
           return buscaNome;
         case "cidade":
-          const buscaCidade = Profissional.listaDeProfissionais.filter(
+          const buscaCidade = Pessoa.listaDeProfissionais.filter(
             (profissional) =>
               profissional.cidade.toLowerCase() ===
               selecaoParaBusca.toLowerCase()
@@ -77,7 +73,7 @@ class Pessoa {
     } else if (tipoDePessoa === "paciente") {
       switch (tipoDeBusca) {
         case "nome":
-          const buscaNome = Paciente.listaDePacientes.find(
+          const buscaNome = Pessoa.listaDePacientes.find(
             (paciente) =>
               paciente.nome.toLowerCase() === selecaoParaBusca.toLowerCase()
           );
@@ -86,7 +82,7 @@ class Pessoa {
           }
           return busca;
         case "cidade":
-          const buscaCidade = Paciente.listaDePacientes.filter(
+          const buscaCidade = Pessoa.listaDePacientes.filter(
             (paciente) =>
               paciente.cidade.toLowerCase() === selecaoParaBusca.toLowerCase()
           );
@@ -99,4 +95,4 @@ class Pessoa {
   }
 }
 
-module.exports = { Pessoa };
+module.exports = Pessoa;
