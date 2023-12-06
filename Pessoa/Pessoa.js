@@ -80,7 +80,7 @@ class Pessoa {
           if (!buscaNome) {
             throw new Error("Esse nome não consta na lista!");
           }
-          return busca;
+          return buscaNome;
         case "cidade":
           const buscaCidade = Pessoa.listaDePacientes.filter(
             (paciente) =>
@@ -93,6 +93,8 @@ class Pessoa {
       }
     }
   }
+
+
 }
 
 module.exports = Pessoa;
