@@ -5,7 +5,7 @@
   "main": "Pessoa.js",
   "scripts": {
     "test": "jest",
-    "test:jest": "jest --coverage"
+    "test:cov": "jest --coverage"
   },
   "keywords": [],
   "author": "",

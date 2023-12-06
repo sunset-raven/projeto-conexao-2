@@ -93,12 +93,15 @@ class Profissional extends Pessoa {
   }
 
   cadastrarConsulta(dia, horario, nomePaciente) {
-    if (!Pessoa.listaDePacientes.find((paciente) => paciente.nome === nomePaciente)) {
+    const busca = Pessoa.listaDePacientes.find(
+      (paciente) => paciente.nome === nomePaciente
+    );
+    if (!busca) {
       throw new Error(`${nomePaciente} não é um paciente cadastrado!`);
     }
     const buscandoDia = this.buscarDia(dia);
     const buscandoHorario = this.agenda[buscandoDia].horario[horario];
-    if (buscandoHorario === false) {
+    if (buscandoHorario !== undefined) {
       throw new Error("Horário não disponível");
     }
     this.agenda[buscandoDia].horario[horario] = nomePaciente;
@@ -117,12 +120,23 @@ class Profissional extends Pessoa {
   cancelarConsulta(dia, horario) {
     const buscandoDia = this.buscarDia(dia);
     const nomeInscrito = this.agenda[buscandoDia].horario[horario];
-    const paciente = Pessoa.listaDePacientes.find((nome) => nome.nome === nomeInscrito);
-    const indexConsulta = paciente.consultasMarcadas.findIndex((diaBuscado) => diaBuscado.dia === dia);
+    if (nomeInscrito === undefined) {
+      throw new Error("Não há nenhuma consulta marcada neste horário.");
+    }
+    const paciente = Pessoa.listaDePacientes.find(
+      (nome) => nome.nome === nomeInscrito
+    );
+    const indexConsulta = paciente.consultasMarcadas.findIndex(
+      (diaBuscado) => diaBuscado.dia === dia
+    );
     paciente.consultasMarcadas.splice(indexConsulta, 1);
-    console.log(paciente.consultasMarcadas);
     this.agenda[buscandoDia].horario[horario] = undefined;
     return "Consulta cancelada com sucesso.";
+  }
+
+  destruir() {
+    let index = Pessoa.listaDeProfissionais.indexOf(this);
+    Pessoa.listaDeProfissionais.splice(index, 1);
   }
 }
 

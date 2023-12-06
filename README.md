@@ -8,6 +8,8 @@ Pensando a partir disso, neste projeto cujo nome inicial é Projeto Conexão 2, 
 
 ## Notas:
 
+### Foi adiciona o método destruir() a ambas as classes herdeiras para fins de testes.
+
 ### Esse código foi o que achei para solucionar o problema de ordenar os parâmetros de um objeto, mas como não removo mais nenhum parâmetro de objeto, ele não é mais necessário. Fica como curiosidade.
 
     // const horariosOrdenados = Object.keys(

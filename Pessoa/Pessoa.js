@@ -87,14 +87,12 @@ class Pessoa {
               paciente.cidade.toLowerCase() === selecaoParaBusca.toLowerCase()
           );
           if (buscaCidade.length === 0) {
-            throw new Error("Nenhum profissional encontrado para esta cidade.");
+            throw new Error("Nenhum paciente encontrado.");
           }
           return buscaCidade;
       }
     }
   }
-
-
 }
 
 module.exports = Pessoa;

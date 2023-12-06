@@ -81,6 +81,63 @@ describe("Testes da classe Pessoa", () => {
       aceitaRemoto: "sim",
       tipoDeProfissional: "psiquiatra",
       especialidade: "psicanalista",
+      agenda: [
+        {
+          dia: "segunda",
+          horario: {
+            "09:00": undefined,
+            "10:00": undefined,
+            "11:00": undefined,
+            "14:00": undefined,
+            "15:00": undefined,
+            "16:00": undefined,
+          },
+        },
+        {
+          dia: "terça",
+          horario: {
+            "09:00": undefined,
+            "10:00": undefined,
+            "11:00": undefined,
+            "14:00": undefined,
+            "15:00": undefined,
+            "16:00": undefined,
+          },
+        },
+        {
+          dia: "quarta",
+          horario: {
+            "09:00": undefined,
+            "10:00": undefined,
+            "11:00": undefined,
+            "14:00": undefined,
+            "15:00": undefined,
+            "16:00": undefined,
+          },
+        },
+        {
+          dia: "quinta",
+          horario: {
+            "09:00": undefined,
+            "10:00": undefined,
+            "11:00": undefined,
+            "14:00": undefined,
+            "15:00": undefined,
+            "16:00": undefined,
+          },
+        },
+        {
+          dia: "sexta",
+          horario: {
+            "09:00": undefined,
+            "10:00": undefined,
+            "11:00": undefined,
+            "14:00": undefined,
+            "15:00": undefined,
+            "16:00": undefined,
+          },
+        },
+      ],
     });
 
     profissional.destruir();
@@ -114,6 +171,63 @@ describe("Testes da classe Pessoa", () => {
         aceitaRemoto: "sim",
         tipoDeProfissional: "psiquiatra",
         especialidade: "psicanalista",
+        agenda: [
+          {
+            dia: "segunda",
+            horario: {
+              "09:00": undefined,
+              "10:00": undefined,
+              "11:00": undefined,
+              "14:00": undefined,
+              "15:00": undefined,
+              "16:00": undefined,
+            },
+          },
+          {
+            dia: "terça",
+            horario: {
+              "09:00": undefined,
+              "10:00": undefined,
+              "11:00": undefined,
+              "14:00": undefined,
+              "15:00": undefined,
+              "16:00": undefined,
+            },
+          },
+          {
+            dia: "quarta",
+            horario: {
+              "09:00": undefined,
+              "10:00": undefined,
+              "11:00": undefined,
+              "14:00": undefined,
+              "15:00": undefined,
+              "16:00": undefined,
+            },
+          },
+          {
+            dia: "quinta",
+            horario: {
+              "09:00": undefined,
+              "10:00": undefined,
+              "11:00": undefined,
+              "14:00": undefined,
+              "15:00": undefined,
+              "16:00": undefined,
+            },
+          },
+          {
+            dia: "sexta",
+            horario: {
+              "09:00": undefined,
+              "10:00": undefined,
+              "11:00": undefined,
+              "14:00": undefined,
+              "15:00": undefined,
+              "16:00": undefined,
+            },
+          },
+        ],
       },
     ]);
 
@@ -179,7 +293,6 @@ describe("Testes da classe Pessoa", () => {
       "sim"
     );
     const profissional = new Profissional();
-
     const busca = profissional.buscarPessoa("paciente", "nome", "PacienteTest");
 
     expect(busca).toEqual({
@@ -208,7 +321,7 @@ describe("Testes da classe Pessoa", () => {
       "sim"
     );
     const profissional = new Profissional();
-    const busca = paciente.buscarPessoa(
+    const busca = profissional.buscarPessoa(
       "paciente",
       "cidade",
       "Rio de Janeiro"
@@ -216,12 +329,11 @@ describe("Testes da classe Pessoa", () => {
 
     expect(busca).toEqual([
       {
-        nome: "ProTest",
+        nome: "PacienteTest",
         cidade: "Rio de Janeiro",
-        tipoDePessoa: "profissional",
+        tipoDePessoa: "paciente",
         aceitaRemoto: "sim",
-        tipoDeProfissional: "psiquiatra",
-        especialidade: "psicanalista",
+        consultasMarcadas: [],
       },
     ]);
 
@@ -229,45 +341,47 @@ describe("Testes da classe Pessoa", () => {
     paciente.destruir();
   });
 
-  test("verificar se o método buscarPessoa retorna erro ao buscar profissional por nome sem profissional cadastrado nesse nome", () => {
-    const profissional = new Profissional();
-    profissional.cadastrarProfissional(
-      "ProTest",
-      "01/04/1980",
-      "2198989898",
-      "Rio de Janeiro",
-      "profissional",
-      "sim",
-      "psiquiatra",
-      "psicanalista"
-    );
+  test("verificar se o método buscarPessoa retorna erro ao buscar paciente por nome sem paciente cadastrado nesse nome", () => {
     const paciente = new Paciente();
+    paciente.cadastrarPaciente(
+      "PacienteTest",
+      "01/04/1980",
+      "2187878787",
+      "Rio de Janeiro",
+      "paciente",
+      "sim",
+      "sim",
+      "depressão",
+      "sim"
+    );
+    const profissional = new Profissional();
 
     expect(() =>
-      paciente.buscarPessoa("profissional", "nome", "Nobody")
+      profissional.buscarPessoa("paciente", "nome", "Nobody")
     ).toThrow("Esse nome não consta na lista!");
 
     profissional.destruir();
     paciente.destruir();
   });
 
-  test("verificar se o método buscarPessoa retorna erro ao buscar profissional por cidade sem profissional cadastrado nessa cidade", () => {
-    const profissional = new Profissional();
-    profissional.cadastrarProfissional(
-      "ProTest",
-      "01/04/1980",
-      "2198989898",
-      "Rio de Janeiro",
-      "profissional",
-      "sim",
-      "psiquiatra",
-      "psicanalista"
-    );
+  test("verificar se o método buscarPessoa retorna erro ao buscar paciente por cidade sem paciente cadastrado nessa cidade", () => {
     const paciente = new Paciente();
+    paciente.cadastrarPaciente(
+      "PacienteTest",
+      "01/04/1980",
+      "2187878787",
+      "Rio de Janeiro",
+      "paciente",
+      "sim",
+      "sim",
+      "depressão",
+      "sim"
+    );
+    const profissional = new Profissional();
 
     expect(() =>
-      paciente.buscarPessoa("profissional", "cidade", "Espírito Santo")
-    ).toThrow("Nenhum profissional encontrado.");
+      paciente.buscarPessoa("paciente", "cidade", "Espírito Santo")
+    ).toThrow("Nenhum paciente encontrado.");
 
     profissional.destruir();
     paciente.destruir();
