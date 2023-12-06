@@ -1,4 +1,5 @@
 const Pessoa = require("../Pessoa/Pessoa");
+const Profissional = require("../Profissional/Profissional")
 
 class Paciente extends Pessoa {
   #fezTerapia;
@@ -64,13 +65,14 @@ class Paciente extends Pessoa {
     const buscandoDia = buscandoMedico.agenda.findIndex(
       (diaBuscado) => diaBuscado.dia === dia
     );
-    const nomeInscrito = buscandoMedico.agenda[buscandoDia].horario[horario];
-    if (nomeInscrito !== this.nome) {
-      throw new Error("Esta consulta não está marcada para esta passoa.")
-    }
     buscandoMedico.agenda[buscandoDia].horario[horario] = undefined;
     this.consultasMarcadas.splice(buscandoConsulta, 1);
     return "Consulta cancelada com sucesso.";
+  }
+
+  destruir() {
+    let index = Pessoa.listaDePacientes.indexOf(this);
+    Pessoa.listaDePacientes.splice(index, 1);
   }
 }
 
