@@ -6,16 +6,28 @@ class Paciente extends Pessoa {
   #temDiagnostico;
   #fezTratamento;
 
-  get getFezTerapia() {
+  getFezTerapia() {
     return this.#fezTerapia;
   }
 
-  get getTemDiagnostico() {
+  getTemDiagnostico() {
     return this.#temDiagnostico;
   }
 
-  get getFezTratamento() {
+  getFezTratamento() {
     return this.#fezTratamento;
+  }
+
+  setFezTerapia(fezTerapia) {
+    this.#fezTerapia = fezTerapia;
+  }
+
+  setTemDiagnostico(temDiagnostico) {
+    this.#temDiagnostico = temDiagnostico;
+  }
+
+  setFezTratamento(fezTratamento) {
+    this.#fezTratamento = fezTratamento;
   }
 
   cadastrarPaciente(

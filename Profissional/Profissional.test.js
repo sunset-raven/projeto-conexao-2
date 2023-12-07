@@ -1,11 +1,13 @@
 const Profissional = require("./Profissional");
 const Paciente = require("../Paciente/Paciente");
 
-describe("Testes da classe Pessoa", () => {
+describe("Testes da classe Profissional", () => {
   //testes de instância
   test("verificar se instância foi criada corretamente", () => {
-    const pessoa = new Profissional();
-    expect(pessoa instanceof Profissional).toBe(true);
+    const profissional = new Profissional();
+    expect(profissional instanceof Profissional).toBe(true);
+
+    profissional.destruir();
   });
 
   //testes do método cadastrarProfissional

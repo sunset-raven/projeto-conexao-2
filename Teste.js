@@ -27,12 +27,11 @@ pessoa2.cadastrarProfissional(
   "urbanismo"
 );
 
-
 console.log(pessoa2.cadastrarConsulta("terça", "11:00", "Andréa"));
-console.log(pessoa2);
-// console.log(pessoa1.consultasMarcadas);
+console.log(pessoa2.agenda[1]);
+console.log(pessoa1.consultasMarcadas);
 console.log(pessoa1.cancelarConsulta("terça", "11:00", "Lucia"));
 // console.log(pessoa2.cancelarConsulta("terça", "11:00"));
 
-// console.log(pessoa2.agenda[1]);
+console.log(pessoa2.agenda[1]);
 // console.log(pessoa1.consultasMarcadas);

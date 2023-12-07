@@ -9,6 +9,24 @@ describe("Testes da classe Pessoa", () => {
     expect(pessoa instanceof Pessoa).toBe(true);
   });
 
+  //testes de getter e setter
+  test("verificar se os métodos getter e setter retornam válidos", () => {
+    const pessoa = new Pessoa();
+    pessoa.cadastrarPessoa(
+      "Test",
+      "01/04/1980",
+      "2196969696",
+      "Rio de Janeiro",
+      "paciente",
+      "sim"
+    );
+    pessoa.setDataDeNascimento("05/10/1975");
+    pessoa.setTelefone("1169696969");
+
+    expect(pessoa.getDataDeNascimento()).toBe("05/10/1975");
+    expect(pessoa.getTelefone()).toBe("1169696969");
+  });
+
   //testes do método cadastrarPessoa
   test("verificar se o método cadastrarPessoa retorna válido", () => {
     const pessoa = new Pessoa();

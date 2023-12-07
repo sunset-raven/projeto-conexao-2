@@ -1,11 +1,37 @@
 const Paciente = require("./Paciente");
 const Profissional = require("../Profissional/Profissional");
 
-describe("Testes da classe Pessoa", () => {
+describe("Testes da classe Paciente", () => {
   //testes de instância
   test("verificar se instância foi criada corretamente", () => {
     const paciente = new Paciente();
     expect(paciente instanceof Paciente).toBe(true);
+
+    paciente.destruir();
+  });
+
+  //testes de getter e setter
+  test("verificar se os métodos getter e setter retornam válidos", () => {
+    const paciente = new Paciente();
+    paciente.cadastrarPaciente(
+      "PacienteTest",
+      "01/04/1980",
+      "2187878787",
+      "Rio de Janeiro",
+      "paciente",
+      "sim",
+      "sim",
+      "depressão",
+      "sim"
+    );
+    paciente.setFezTerapia("não");
+    paciente.setTemDiagnostico("não");
+    paciente.setFezTratamento("não");
+    expect(paciente.getFezTerapia()).toBe("não");
+    expect(paciente.getTemDiagnostico()).toBe("não");
+    expect(paciente.getFezTratamento()).toBe("não");
+
+    paciente.destruir();
   });
 
   //testes do método cadastrarPaciente

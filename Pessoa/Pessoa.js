@@ -4,19 +4,19 @@ class Pessoa {
   static listaDePacientes = [];
   static listaDeProfissionais = [];
 
-  get getDataDeNascimento() {
+  getDataDeNascimento() {
     return this.#dataDeNascimento;
   }
 
-  get getTelefone() {
+  getTelefone() {
     return this.#telefone;
   }
 
-  set setDataDeNascimento(dataDeNascimento) {
+  setDataDeNascimento(dataDeNascimento) {
     this.#dataDeNascimento = dataDeNascimento;
   }
 
-  set setTelefone(telefone) {
+  setTelefone(telefone) {
     this.#telefone = telefone;
   }
 
