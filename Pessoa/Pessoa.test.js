@@ -322,7 +322,7 @@ describe("Testes da classe Pessoa", () => {
       cidade: "Rio de Janeiro",
       tipoDePessoa: "paciente",
       aceitaRemoto: "sim",
-      consultasMarcadas: [],
+      consultas: { consultas: [] },
     });
 
     profissional.destruir();
@@ -355,7 +355,7 @@ describe("Testes da classe Pessoa", () => {
         cidade: "Rio de Janeiro",
         tipoDePessoa: "paciente",
         aceitaRemoto: "sim",
-        consultasMarcadas: [],
+        consultas: { consultas: [] },
       },
     ]);
 

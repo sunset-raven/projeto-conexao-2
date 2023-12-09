@@ -1,17 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1702118232790" clover="3.2.0">
-  <project timestamp="1702118232790" name="All files">
-    <metrics statements="8" coveredstatements="8" conditionals="3" coveredconditionals="3" methods="4" coveredmethods="4" elements="15" coveredelements="15" complexity="0" loc="8" ncloc="8" packages="1" files="1" classes="1"/>
-    <file name="Consultas.js" path="C:\Users\andre\Documents\GitHub\Imersão JavaScript\projeto-conexao-2\Consultas\Consultas.js">
+<coverage generated="1702130124565" clover="3.2.0">
+  <project timestamp="1702130124565" name="All files">
+    <metrics statements="124" coveredstatements="124" conditionals="35" coveredconditionals="34" methods="36" coveredmethods="36" elements="195" coveredelements="194" complexity="0" loc="124" ncloc="124" packages="5" files="5" classes="5"/>
+    <package name="Agenda">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <file name="Agenda.js" path="C:\Users\andre\Documents\GitHub\Imersão JavaScript\projeto-conexao-2\Agenda\Agenda.js">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="2" count="17" type="stmt"/>
+        <line num="61" count="11" type="stmt"/>
+        <line num="62" count="15" type="stmt"/>
+        <line num="64" count="11" type="stmt"/>
+        <line num="68" count="7" type="stmt"/>
+        <line num="72" count="8" type="stmt"/>
+        <line num="77" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="Consultas">
       <metrics statements="8" coveredstatements="8" conditionals="3" coveredconditionals="3" methods="4" coveredmethods="4"/>
-      <line num="2" count="4" type="stmt"/>
-      <line num="5" count="3" type="stmt"/>
-      <line num="10" count="3" type="stmt"/>
-      <line num="14" count="1" type="stmt"/>
-      <line num="16" count="1" type="cond" truecount="3" falsecount="0"/>
-      <line num="20" count="1" type="stmt"/>
-      <line num="24" count="1" type="stmt"/>
-      <line num="28" count="1" type="stmt"/>
-    </file>
+      <file name="Consultas.js" path="C:\Users\andre\Documents\GitHub\Imersão JavaScript\projeto-conexao-2\Consultas\Consultas.js">
+        <metrics statements="8" coveredstatements="8" conditionals="3" coveredconditionals="3" methods="4" coveredmethods="4"/>
+        <line num="2" count="15" type="stmt"/>
+        <line num="5" count="8" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="16" count="4" type="cond" truecount="3" falsecount="0"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="28" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="Paciente">
+      <metrics statements="29" coveredstatements="29" conditionals="4" coveredconditionals="4" methods="10" coveredmethods="10"/>
+      <file name="Paciente.js" path="C:\Users\andre\Documents\GitHub\Imersão JavaScript\projeto-conexao-2\Paciente\Paciente.js">
+        <metrics statements="29" coveredstatements="29" conditionals="4" coveredconditionals="4" methods="10" coveredmethods="10"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="44" count="12" type="stmt"/>
+        <line num="52" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="55" count="11" type="stmt"/>
+        <line num="56" count="11" type="stmt"/>
+        <line num="57" count="11" type="stmt"/>
+        <line num="58" count="11" type="stmt"/>
+        <line num="59" count="11" type="stmt"/>
+        <line num="60" count="11" type="stmt"/>
+        <line num="64" count="2" type="stmt"/>
+        <line num="65" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="71" count="1" type="stmt"/>
+        <line num="73" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="80" count="16" type="stmt"/>
+        <line num="81" count="16" type="stmt"/>
+        <line num="85" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="Pessoa">
+      <metrics statements="43" coveredstatements="43" conditionals="20" coveredconditionals="19" methods="11" coveredmethods="11"/>
+      <file name="Pessoa.js" path="C:\Users\andre\Documents\GitHub\Imersão JavaScript\projeto-conexao-2\Pessoa\Pessoa.js">
+        <metrics statements="43" coveredstatements="43" conditionals="20" coveredconditionals="19" methods="11" coveredmethods="11"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="24" count="28" type="stmt"/>
+        <line num="25" count="28" type="cond" truecount="2" falsecount="0"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="38" count="29" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="41" count="28" type="stmt"/>
+        <line num="42" count="27" type="stmt"/>
+        <line num="43" count="27" type="stmt"/>
+        <line num="44" count="27" type="stmt"/>
+        <line num="45" count="27" type="stmt"/>
+        <line num="46" count="27" type="stmt"/>
+        <line num="47" count="27" type="stmt"/>
+        <line num="51" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="52" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="54" count="2" type="stmt"/>
+        <line num="56" count="2" type="stmt"/>
+        <line num="58" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="63" count="2" type="stmt"/>
+        <line num="65" count="2" type="stmt"/>
+        <line num="68" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="71" count="1" type="stmt"/>
+        <line num="73" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="74" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="76" count="2" type="stmt"/>
+        <line num="78" count="2" type="stmt"/>
+        <line num="80" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="81" count="1" type="stmt"/>
+        <line num="83" count="1" type="stmt"/>
+        <line num="85" count="2" type="stmt"/>
+        <line num="87" count="2" type="stmt"/>
+        <line num="89" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="92" count="1" type="stmt"/>
+        <line num="98" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="Profissional">
+      <metrics statements="37" coveredstatements="37" conditionals="8" coveredconditionals="8" methods="7" coveredmethods="7"/>
+      <file name="Profissional.js" path="C:\Users\andre\Documents\GitHub\Imersão JavaScript\projeto-conexao-2\Profissional\Profissional.js">
+        <metrics statements="37" coveredstatements="37" conditionals="8" coveredconditionals="8" methods="7" coveredmethods="7"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="15" count="13" type="stmt"/>
+        <line num="23" count="13" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="26" count="12" type="stmt"/>
+        <line num="27" count="12" type="stmt"/>
+        <line num="28" count="12" type="stmt"/>
+        <line num="29" count="12" type="stmt"/>
+        <line num="30" count="12" type="stmt"/>
+        <line num="36" count="7" type="stmt"/>
+        <line num="37" count="6" type="stmt"/>
+        <line num="39" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="42" count="6" type="stmt"/>
+        <line num="43" count="6" type="stmt"/>
+        <line num="44" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="47" count="5" type="stmt"/>
+        <line num="48" count="5" type="stmt"/>
+        <line num="49" count="5" type="stmt"/>
+        <line num="51" count="5" type="stmt"/>
+        <line num="52" count="5" type="stmt"/>
+        <line num="53" count="5" type="stmt"/>
+        <line num="57" count="2" type="stmt"/>
+        <line num="58" count="2" type="stmt"/>
+        <line num="59" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="63" count="1" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="67" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="72" count="17" type="stmt"/>
+        <line num="73" count="17" type="stmt"/>
+        <line num="77" count="3" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

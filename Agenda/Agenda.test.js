@@ -35,6 +35,6 @@ describe("Testes da classe Agenda", () => {
     const agenda = new Agenda();
     const mudanca = agenda.alterarHorario(0, "11:00", "PacienteTeste");
   
-    expect(mudanca).toBe("PacienteTest");
+    expect(agenda.dias[0].horario["11:00"]).toBe("PacienteTeste");
   });
 });
