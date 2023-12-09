@@ -99,97 +99,8 @@ describe("Testes da classe Pessoa", () => {
       aceitaRemoto: "sim",
       tipoDeProfissional: "psiquiatra",
       especialidade: "psicanalista",
-      agenda: [
-        {
-          dia: "segunda",
-          horario: {
-            "09:00": undefined,
-            "10:00": undefined,
-            "11:00": undefined,
-            "14:00": undefined,
-            "15:00": undefined,
-            "16:00": undefined,
-          },
-        },
-        {
-          dia: "terça",
-          horario: {
-            "09:00": undefined,
-            "10:00": undefined,
-            "11:00": undefined,
-            "14:00": undefined,
-            "15:00": undefined,
-            "16:00": undefined,
-          },
-        },
-        {
-          dia: "quarta",
-          horario: {
-            "09:00": undefined,
-            "10:00": undefined,
-            "11:00": undefined,
-            "14:00": undefined,
-            "15:00": undefined,
-            "16:00": undefined,
-          },
-        },
-        {
-          dia: "quinta",
-          horario: {
-            "09:00": undefined,
-            "10:00": undefined,
-            "11:00": undefined,
-            "14:00": undefined,
-            "15:00": undefined,
-            "16:00": undefined,
-          },
-        },
-        {
-          dia: "sexta",
-          horario: {
-            "09:00": undefined,
-            "10:00": undefined,
-            "11:00": undefined,
-            "14:00": undefined,
-            "15:00": undefined,
-            "16:00": undefined,
-          },
-        },
-      ],
-    });
-
-    profissional.destruir();
-    paciente.destruir();
-  });
-
-  test("verificar se o método buscarPessoa retorna pessoas profissionais por cidade", () => {
-    const profissional = new Profissional();
-    profissional.cadastrarProfissional(
-      "ProTest",
-      "01/04/1980",
-      "2198989898",
-      "Rio de Janeiro",
-      "profissional",
-      "sim",
-      "psiquiatra",
-      "psicanalista"
-    );
-    const paciente = new Paciente();
-    const busca = paciente.buscarPessoa(
-      "profissional",
-      "cidade",
-      "Rio de Janeiro"
-    );
-
-    expect(busca).toEqual([
-      {
-        nome: "ProTest",
-        cidade: "Rio de Janeiro",
-        tipoDePessoa: "profissional",
-        aceitaRemoto: "sim",
-        tipoDeProfissional: "psiquiatra",
-        especialidade: "psicanalista",
-        agenda: [
+      agenda: {
+        dias: [
           {
             dia: "segunda",
             horario: {
@@ -246,6 +157,99 @@ describe("Testes da classe Pessoa", () => {
             },
           },
         ],
+      },
+    });
+
+    profissional.destruir();
+    paciente.destruir();
+  });
+
+  test("verificar se o método buscarPessoa retorna pessoas profissionais por cidade", () => {
+    const profissional = new Profissional();
+    profissional.cadastrarProfissional(
+      "ProTest",
+      "01/04/1980",
+      "2198989898",
+      "Rio de Janeiro",
+      "profissional",
+      "sim",
+      "psiquiatra",
+      "psicanalista"
+    );
+    const paciente = new Paciente();
+    const busca = paciente.buscarPessoa(
+      "profissional",
+      "cidade",
+      "Rio de Janeiro"
+    );
+
+    expect(busca).toEqual([
+      {
+        nome: "ProTest",
+        cidade: "Rio de Janeiro",
+        tipoDePessoa: "profissional",
+        aceitaRemoto: "sim",
+        tipoDeProfissional: "psiquiatra",
+        especialidade: "psicanalista",
+        agenda: {
+          dias: [
+            {
+              dia: "segunda",
+              horario: {
+                "09:00": undefined,
+                "10:00": undefined,
+                "11:00": undefined,
+                "14:00": undefined,
+                "15:00": undefined,
+                "16:00": undefined,
+              },
+            },
+            {
+              dia: "terça",
+              horario: {
+                "09:00": undefined,
+                "10:00": undefined,
+                "11:00": undefined,
+                "14:00": undefined,
+                "15:00": undefined,
+                "16:00": undefined,
+              },
+            },
+            {
+              dia: "quarta",
+              horario: {
+                "09:00": undefined,
+                "10:00": undefined,
+                "11:00": undefined,
+                "14:00": undefined,
+                "15:00": undefined,
+                "16:00": undefined,
+              },
+            },
+            {
+              dia: "quinta",
+              horario: {
+                "09:00": undefined,
+                "10:00": undefined,
+                "11:00": undefined,
+                "14:00": undefined,
+                "15:00": undefined,
+                "16:00": undefined,
+              },
+            },
+            {
+              dia: "sexta",
+              horario: {
+                "09:00": undefined,
+                "10:00": undefined,
+                "11:00": undefined,
+                "14:00": undefined,
+                "15:00": undefined,
+                "16:00": undefined,
+              },
+            },
+          ],
+        },
       },
     ]);
 
@@ -405,27 +409,3 @@ describe("Testes da classe Pessoa", () => {
     paciente.destruir();
   });
 });
-
-// const profissional = new Profissional();
-// profissional.cadastrarProfissional(
-//   "ProTest",
-//   "01/04/1980",
-//   "2198989898",
-//   "Rio de Janeiro",
-//   "profissional",
-//   "sim",
-//   "psiquiatra",
-//   "psicanalista"
-// );
-// const paciente = new Paciente();
-// paciente.cadastrarPaciente(
-//   "PacienteTest",
-//   "01/04/1980",
-//   "2187878787",
-//   "Rio de Janeiro",
-//   "paciente",
-//   "sim",
-//   "sim",
-//   "depressão",
-//   "sim"
-// );

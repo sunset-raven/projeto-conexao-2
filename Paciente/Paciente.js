@@ -1,5 +1,5 @@
 const Pessoa = require("../Pessoa/Pessoa");
-const Profissional = require("../Profissional/Profissional")
+const Consultas = require("../Consultas/Consultas")
 
 class Paciente extends Pessoa {
   #fezTerapia;
@@ -55,30 +55,24 @@ class Paciente extends Pessoa {
     this.#fezTerapia = fezTerapia;
     this.#temDiagnostico = temDiagnostico;
     this.#fezTratamento = fezTratamento;
-    this.consultasMarcadas = [];
+    const consultasMarcadas = new Consultas();
+    this.consultas = consultasMarcadas;
     Pessoa.listaDePacientes.push(this);
   }
 
   cancelarConsulta(dia, horario, nome) {
-    const buscandoConsulta = this.consultasMarcadas.findIndex(
-      (diaBuscado) =>
-        diaBuscado.dia === dia &&
-        diaBuscado.horario === horario &&
-        diaBuscado.profissional === nome
-    );
+    const buscandoConsulta = this.consultas.buscarIndexConsulta(dia, horario, nome);
     if (buscandoConsulta === -1) {
       throw new Error(
         "Essa consulta não existe ou está marcada para outra pessoa."
       );
     }
-    const buscandoMedico = Pessoa.listaDeProfissionais.find(
-      (medico) => medico.nome === nome
+    const buscandoPro = Pessoa.listaDeProfissionais.find(
+      (pro) => pro.nome === nome
     );
-    const buscandoDia = buscandoMedico.agenda.findIndex(
-      (diaBuscado) => diaBuscado.dia === dia
-    );
-    buscandoMedico.agenda[buscandoDia].horario[horario] = undefined;
-    this.consultasMarcadas.splice(buscandoConsulta, 1);
+    const buscandoDia = buscandoPro.agenda.buscarDia(dia);
+    buscandoPro.agenda.alterarHorario(buscandoDia, horario, undefined);
+    this.consultas.removerConsulta(buscandoConsulta);
     return "Consulta cancelada com sucesso.";
   }
 

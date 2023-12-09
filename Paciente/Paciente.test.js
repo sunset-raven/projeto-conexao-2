@@ -54,7 +54,9 @@ describe("Testes da classe Paciente", () => {
       cidade: "Rio de Janeiro",
       tipoDePessoa: "paciente",
       aceitaRemoto: "sim",
-      consultasMarcadas: [],
+      consultas: {
+        consultas: [],
+      },
     });
 
     paciente.destruir();
@@ -111,8 +113,10 @@ describe("Testes da classe Paciente", () => {
     );
 
     expect(cancelamento).toBe("Consulta cancelada com sucesso.");
-    expect(profissional.agenda[0].horario["10:00"]).toEqual(undefined);
-    expect(paciente.consultasMarcadas).toEqual([]);
+    expect(profissional.agenda.dias[0].horario["10:00"]).toEqual(undefined);
+    expect(paciente.consultas).toEqual({
+      consultas: [],
+    });
 
     profissional.destruir();
     paciente.destruir();

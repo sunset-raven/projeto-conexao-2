@@ -30,63 +30,65 @@ describe("Testes da classe Profissional", () => {
       aceitaRemoto: "sim",
       tipoDeProfissional: "psiquiatra",
       especialidade: "psicanalista",
-      agenda: [
-        {
-          dia: "segunda",
-          horario: {
-            "09:00": undefined,
-            "10:00": undefined,
-            "11:00": undefined,
-            "14:00": undefined,
-            "15:00": undefined,
-            "16:00": undefined,
+      agenda: {
+        dias: [
+          {
+            dia: "segunda",
+            horario: {
+              "09:00": undefined,
+              "10:00": undefined,
+              "11:00": undefined,
+              "14:00": undefined,
+              "15:00": undefined,
+              "16:00": undefined,
+            },
           },
-        },
-        {
-          dia: "terça",
-          horario: {
-            "09:00": undefined,
-            "10:00": undefined,
-            "11:00": undefined,
-            "14:00": undefined,
-            "15:00": undefined,
-            "16:00": undefined,
+          {
+            dia: "terça",
+            horario: {
+              "09:00": undefined,
+              "10:00": undefined,
+              "11:00": undefined,
+              "14:00": undefined,
+              "15:00": undefined,
+              "16:00": undefined,
+            },
           },
-        },
-        {
-          dia: "quarta",
-          horario: {
-            "09:00": undefined,
-            "10:00": undefined,
-            "11:00": undefined,
-            "14:00": undefined,
-            "15:00": undefined,
-            "16:00": undefined,
+          {
+            dia: "quarta",
+            horario: {
+              "09:00": undefined,
+              "10:00": undefined,
+              "11:00": undefined,
+              "14:00": undefined,
+              "15:00": undefined,
+              "16:00": undefined,
+            },
           },
-        },
-        {
-          dia: "quinta",
-          horario: {
-            "09:00": undefined,
-            "10:00": undefined,
-            "11:00": undefined,
-            "14:00": undefined,
-            "15:00": undefined,
-            "16:00": undefined,
+          {
+            dia: "quinta",
+            horario: {
+              "09:00": undefined,
+              "10:00": undefined,
+              "11:00": undefined,
+              "14:00": undefined,
+              "15:00": undefined,
+              "16:00": undefined,
+            },
           },
-        },
-        {
-          dia: "sexta",
-          horario: {
-            "09:00": undefined,
-            "10:00": undefined,
-            "11:00": undefined,
-            "14:00": undefined,
-            "15:00": undefined,
-            "16:00": undefined,
+          {
+            dia: "sexta",
+            horario: {
+              "09:00": undefined,
+              "10:00": undefined,
+              "11:00": undefined,
+              "14:00": undefined,
+              "15:00": undefined,
+              "16:00": undefined,
+            },
           },
-        },
-      ],
+        ],
+      },
     });
     profissional.destruir();
   });
@@ -138,14 +140,18 @@ describe("Testes da classe Profissional", () => {
       "PacienteTest"
     );
     expect(consulta).toBe("Você marcou sua consulta com sucesso!");
-    expect(paciente.consultasMarcadas).toEqual([
-      {
-        dia: "segunda",
-        horario: "11:00",
-        profissional: "ProTest",
-      },
-    ]);
-    expect(profissional.agenda[0].horario["11:00"]).toEqual("PacienteTest");
+    expect(paciente.consultas).toEqual({
+      consultas: [
+        {
+          dia: "segunda",
+          horario: "11:00",
+          profissional: "ProTest",
+        },
+      ],
+    });
+    expect(profissional.agenda.dias[0].horario["11:00"]).toEqual(
+      "PacienteTest"
+    );
 
     profissional.destruir();
     paciente.destruir();
@@ -234,8 +240,8 @@ describe("Testes da classe Profissional", () => {
     const cancelamento = profissional.cancelarConsulta("segunda", "11:00");
 
     expect(cancelamento).toBe("Consulta cancelada com sucesso.");
-    expect(profissional.agenda[0].horario["11:00"]).toBe(undefined);
-    expect(paciente.consultasMarcadas).toEqual([]);
+    expect(profissional.agenda.dias[0].horario["11:00"]).toBe(undefined);
+    expect(paciente.consultas).toEqual({ consultas: [] });
 
     profissional.destruir();
     paciente.destruir();
